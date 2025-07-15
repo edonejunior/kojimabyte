@@ -1,12 +1,6 @@
 # kojimabyte
 Site criado para ser um repositório de reviews de games.
 
-Teste Readme. Junior
-Teste Gustavo
-teste Gustavo 2
-
-test rafael
-
 🎨 Paleta de Cores – KojimaByte
 Cor	Hex	Uso Sugerido
 Vermelho Game	#E74C3C	Botões, destaques, logotipo
