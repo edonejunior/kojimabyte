@@ -34,6 +34,16 @@
       margin: 0;
     }
 
+    header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items:start;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  
+}
+
     nav {
       background-color: var(--dark);
       display: flex;
@@ -57,6 +67,10 @@
       text-align: center;
       padding: 2rem 1rem;
     }
+    header img.logo {
+  max-height: 150px;
+  width: auto;
+  }
 
     .hero h2 {
       color: var(--red);
@@ -98,6 +112,8 @@
 
   <header>
     <h1>KOJIMABYTE</h1>
+    <div class="container">
+     <a href="index.html"><img src="assets/logo.png" alt="KOJIMABYTE" class="logo" /></a></div>
   </header>
 
   <nav>
