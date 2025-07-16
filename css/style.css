@@ -84,3 +84,17 @@ footer {
   padding: 1rem;
   font-size: 0.875rem;
 }
+  header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items:start;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  
+}
+    header img.logo {
+  max-height: 150px;
+  width: auto;
+  }
+
