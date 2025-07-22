@@ -97,4 +97,24 @@ footer {
   max-height: 150px;
   width: auto;
   }
+.hero p {
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
 
+.card p {
+  font-size: 1rem;
+  color: var(--dark);
+}
+
+/* Estilo para ajustar layout da página Sobre Nós */
+.card-container .card {
+  background-color: var(--cream);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card-container .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.2);
+}
