@@ -9,9 +9,7 @@
     <link rel="stylesheet" href="./Genshin.css">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
 
-    <header class="banner">
-    <img src="/assets/Games/bannergenshin.jpg" alt="Banner Genshin Impact">
-  </header>
+  
 
 <header>
   <h1>GameReview</h1>
@@ -22,9 +20,18 @@
   <a href="genshin.html">Genshin Impact</a>
 </nav>
 
+
 <section class="section">
   <h3>Sinopse</h3>
-<p>Genshin Impact é um RPG de ação em mundo aberto desenvolvido pela HoYoverse...O jogo conta com uma história cativante que gira em torno do(a) personagem principal "o(a) viajante", a história acompanha perfeitamente a aquisição de alguns personagens e a cada conversa com NPCS e decisões tomadas muda o rumo da história que será seguida pelo(a) personagem(a) escolhido.  </p>
+  <div class="sinopse-container">
+    <img src="/assets/Games/bannergenshin.jpg" alt="Banner Genshin Impact" class="genshin-banner">
+    <p>
+      Genshin Impact é um RPG de ação em mundo aberto desenvolvido pela HoYoverse... 
+      O jogo conta com uma história cativante que gira em torno do(a) personagem principal "o(a) viajante", 
+      a história acompanha perfeitamente a aquisição de alguns personagens e a cada conversa com NPCs e decisões tomadas 
+      muda o rumo da história que será seguida pelo(a) personagem(a) escolhido.
+    </p>
+  </div>
 </section>
 
 <section class="section">
@@ -77,18 +84,30 @@ Se você curte ação, mundo aberto, uma boa história e belos visuais, essa é 
 
 <section class="section">
   <h3>Personagens em Destaque</h3>
-  <div class="character-cards">
-    <div class="character-card">
-      <img src="/assets/Games/oviajante.jpg" alt="O viajante">
-      <h4> O viajante </h4>
+  <div class="carousel-container">
+    
+    <button class="carousel-button prev">&#10094;</button>
+    <button class="carousel-button next">&#10095;</button>
+
+    <div class="carousel-track">
+      <div class="character-card">
+        <img src="/assets/Games/oviajante.jpg" alt="O viajante">
+        <h4>O viajante</h4>
+      </div>
+      <div class="character-card">
+        <img src="/assets/Games/aviajante.jpg" alt="A viajante">
+        <h4>A viajante</h4>
+      </div>
+      <div class="character-card">
+        <img src="/assets/Games/Venti.jpg" alt="Venti">
+        <h4>Venti</h4>
+      </div>
+      <div class="character-card">
+        <img src="/assets/Games/Furina.jpg" alt="Venti">
+        <h4>Furina</h4>
+      </div>
+      
     </div>
-    <div class="character-card">
-      <img src="/assets/Games/aviajante.jpg" alt="A viajante">
-      <h4> A viajante </h4>
-    </div>
-    <div class="character-card">
-      <img src="/assets/Games/Venti.jpg" alt=" Venti ">
-      <h4> Venti </h4>
   </div>
 </section>
 
@@ -101,3 +120,19 @@ Se você curte ação, mundo aberto, uma boa história e belos visuais, essa é 
 <footer>
   <p>&copy; 2025 GameReview. Todos os direitos reservados.</p>
 </footer>
+
+<script>
+  const carouselTrack = document.querySelector('.carousel-track');
+  const nextButton = document.querySelector('.carousel-button.next');
+  const prevButton = document.querySelector('.carousel-button.prev');
+
+  const scrollAmount = 270; // Ajuste com base na largura dos cards + gap
+
+  nextButton.addEventListener('click', () => {
+    carouselTrack.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+  });
+
+  prevButton.addEventListener('click', () => {
+    carouselTrack.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+  });
+</script>
