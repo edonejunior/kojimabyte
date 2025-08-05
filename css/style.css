@@ -164,4 +164,73 @@ html, body {
   flex: 1; /* ocupa o espaço disponível */
 }
 
+.contato {
+  background-color: white;
+  padding: 60px 20px;
+}
+
+.form-wrapper {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: var(--cream);
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+.section-title {
+  font-size: 2rem;
+  color: var(--blue);
+  margin-bottom: 10px;
+}
+
+.section-subtitle {
+  font-size: 1rem;
+  color: var(--dark);
+  margin-bottom: 30px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-contato {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: left;
+}
+
+.form-contato input,
+.form-contato textarea {
+  padding: 14px;
+  border: 1px solid var(--gray);
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.form-contato input:focus,
+.form-contato textarea:focus {
+  outline: none;
+  border-color: var(--blue);
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+.form-contato button {
+  background-color: var(--blue);
+  color: white;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-contato button:hover {
+  background-color: #2c80b4;
+}
+
 
