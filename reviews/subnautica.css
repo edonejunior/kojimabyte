@@ -1,0 +1,185 @@
+/* ===== Subnautica Page Specific Styles ===== */
+
+/* Hero exclusivo da página */
+.page-hero {
+  position: relative;
+  height: 280px;
+  background: linear-gradient(to bottom, rgba(0, 40, 80, 0.6), rgba(0, 20, 40, 0.95)), url('../assets/games/subnautica-2.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 2rem;
+  border-bottom: 4px solid var(--blue);
+}
+
+.page-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 30, 60, 0.4);
+}
+
+.page-hero__content {
+  position: relative;
+  padding: 2rem;
+  color: #fff;
+  z-index: 2;
+}
+
+.page-hero__title {
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: #fff;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+}
+
+.page-hero__subtitle {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+  color: #d0ecff;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.6);
+}
+
+/* Conteúdo principal */
+.main-content {
+  padding: 2rem 0;
+}
+
+/* Grid de conteúdo */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+/* Cards */
+.card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card h2 {
+  color: var(--blue);
+  margin-bottom: 1rem;
+  border-bottom: 2px solid var(--blue);
+  padding-bottom: 0.5rem;
+}
+
+/* Pros e Contras */
+.pros-cons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.pros ul li::before {
+  content: "✔ ";
+  color: green;
+  font-weight: bold;
+}
+
+.cons ul li::before {
+  content: "✘ ";
+  color: red;
+  font-weight: bold;
+}
+
+/* Vídeo responsivo */
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Galeria */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.gallery-grid img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.05);
+}
+
+/* Tabela */
+.card table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.card table th,
+.card table td {
+  border: 1px solid var(--gray);
+  padding: 0.6rem;
+  text-align: left;
+}
+
+.card table th {
+  background-color: var(--blue);
+  color: white;
+}
+
+/* Botão Voltar ao Topo */
+.to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--blue);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 100;
+}
+
+.to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-5px);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .page-hero {
+    height: 200px;
+    text-align: center;
+  }
+  .page-hero__title {
+    font-size: 2rem;
+  }
+  .page-hero__subtitle {
+    font-size: 1rem;
+  }
+}
