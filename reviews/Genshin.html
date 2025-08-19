@@ -82,45 +82,14 @@ Se você curte ação, mundo aberto, uma boa história e belos visuais, essa é 
 </section>
 
 <section class="section">
-  <h3>Personagens em Destaque</h3>
-  <div class="carousel-container">
-    
-    <button class="carousel-button prev">&#10094;</button>
-    <button class="carousel-button next">&#10095;</button>
-
-    <div class="carousel-track">
-      <div class="character-card">
-        <img  class="imagespersons" src="../assets/Games/oviajante.jpg" alt="O viajante">
-        <h4>O viajante</h4>
-      </div>
-      <div class="character-card">
-        <img  class="imagespersons" src="../assets/Games/aviajante.jpg" alt="A viajante">
-        <h4>A viajante</h4>
-      </div>
-      <div class="character-card">
-        <img  class="imagespersons" src="../assets/Games/Venti.jpg" alt="Venti">
-        <h4>Venti</h4>
-      </div>
-      <div class="character-card">
-        <img  class="imagespersons" src="../assets/Games/Furina.jpg" alt="Furina">
-        <h4>Furina</h4>
-      </div>
-      <div class="character-card">
-        <img  class="imagespersons" src="../assets/Games/yun jin.jpg" alt="Yun jin">
-        <h4>Yun Jin</h4>
-      </div>
-      <div class="character-card">
-        <img  class="imagespersons" src="../assets/Games/Andarilho.jpg" alt="Andarilho">
-        <h4>Andarilho</h4>
-      </div>
-      <div class="character-card">
-        <img  class="imagespersons" src="../assets/Games/Nilou.jpg" alt="Nilou">
-        <h4>Nilou</h4>
-      </div>
-      <div class="character-card">
-        <img  class="imagespersons" src="../assets/Games/Navia.jpg" alt="Navia">
-        <h4>Navia</h4>
-      </div>
+  <h3>✨ Banner Interativo Estilo Coverflow</h3>
+  <div class="coverflow-carousel">
+    <div class="coverflow-track">
+      <img src="..//assets/Games/Banner Escoffier.jpg" alt="Banner 1" class="coverflow-item">
+      <img src="..//assets/Games/Banner Mavuika.jpg" alt="Banner 2" class="coverflow-item">
+      <img src="..//assets/Games/Banner Clorinde.jpg" alt="Banner 3" class="coverflow-item">
+      <img src="..//assets/Games/Banner Neuvillette.jpg" alt="Banner 4" class="coverflow-item">
+      <img src="..//assets/Games/Banner Skirk.jpg" alt="Banner 5" class="coverflow-item">
     </div>
   </div>
 </section>
@@ -136,17 +105,57 @@ Se você curte ação, mundo aberto, uma boa história e belos visuais, essa é 
 </footer>
 
 <script>
-  const carouselTrack = document.querySelector('.carousel-track');
-  const nextButton = document.querySelector('.carousel-button.next');
-  const prevButton = document.querySelector('.carousel-button.prev');
+  const items = document.querySelectorAll(".coverflow-item");
+  let activeIndex = 0;
+  let autoplayInterval;
 
-  const scrollAmount = 270; // Ajuste com base na largura dos cards + gap
+  function updateCoverflow() {
+    items.forEach((item, i) => {
+      item.classList.remove("active");
+      const offset = i - activeIndex;
 
-  nextButton.addEventListener('click', () => {
-    carouselTrack.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      if (offset === 0) {
+        // imagem principal
+        item.classList.add("active");
+        item.style.transform = "scale(1.1) translateX(0) rotateY(0deg)";
+        item.style.zIndex = 10;
+        item.style.opacity = 1;
+        item.style.filter = "brightness(1)";
+      } else {
+        // imagens laterais
+        const translateX = offset * 220;
+        const rotateY = offset < 0 ? 25 : -25; // inclinação 3D
+        item.style.transform = `scale(0.8) translateX(${translateX}px) rotateY(${rotateY}deg)`;
+        item.style.zIndex = 0;
+        item.style.opacity = 0.6;
+        item.style.filter = "brightness(0.6)";
+      }
+    });
+  }
+
+  // Clique para mudar
+  items.forEach((item, i) => {
+    item.addEventListener("click", () => {
+      activeIndex = i;
+      updateCoverflow();
+      resetAutoplay();
+    });
   });
 
-  prevButton.addEventListener('click', () => {
-    carouselTrack.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-  });
+  // Autoplay
+  function startAutoplay() {
+    autoplayInterval = setInterval(() => {
+      activeIndex = (activeIndex + 1) % items.length;
+      updateCoverflow();
+    }, 5000);
+  }
+
+  function resetAutoplay() {
+    clearInterval(autoplayInterval);
+    startAutoplay();
+  }
+
+  // inicializar
+  updateCoverflow();
+  startAutoplay();
 </script>
