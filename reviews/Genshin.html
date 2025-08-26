@@ -83,16 +83,20 @@ Se você curte ação, mundo aberto, uma boa história e belos visuais, essa é 
 
 <section class="section">
   <h3>✨ Banner Interativo Estilo Coverflow</h3>
-  <div class="coverflow-carousel">
-    <div class="coverflow-track">
-      <img src="..//assets/Games/Banner Escoffier.jpg" alt="Banner 1" class="coverflow-item">
-      <img src="..//assets/Games/Banner Mavuika.jpg" alt="Banner 2" class="coverflow-item">
-      <img src="..//assets/Games/Banner Clorinde.jpg" alt="Banner 3" class="coverflow-item">
-      <img src="..//assets/Games/Banner Neuvillette.jpg" alt="Banner 4" class="coverflow-item">
-      <img src="..//assets/Games/Banner Skirk.jpg" alt="Banner 5" class="coverflow-item">
-    </div>
+
+<section class="carousel-wrapper">
+   <div class="carousel-background"></div>
+   <div class="carousel-container">
+  <div class="carousel-track">
+    <div class="carousel-item active"><img src="..//assets/Games/Banner Mavuika.jpg" alt="Imagem 1"></div>
+    <div class="carousel-item"><img src="..//assets/Games/Banner Skirk.jpg" alt="Imagem 2"></div>
+    <div class="carousel-item"><img src="..//assets/Games/Banner Sigewinne.jpg" alt="Imagem 3"></div>
+    <div class="carousel-item"><img src="..//assets/Games/Banner Escoffier.jpg" alt="Imagem 4"></div>
+    <div class="carousel-item"><img src="..//assets/Games/Banneer Hu Tao.jpg" alt="Imagem 5"></div>
+  </div>
   </div>
 </section>
+
 
 <section class="section">
   <h3>Avaliação</h3>
@@ -105,57 +109,31 @@ Se você curte ação, mundo aberto, uma boa história e belos visuais, essa é 
 </footer>
 
 <script>
-  const items = document.querySelectorAll(".coverflow-item");
-  let activeIndex = 0;
-  let autoplayInterval;
+const track = document.querySelector('.carousel-track');
+const images = Array.from(track.children);
+let activeIndex = Math.floor(images.length / 2); // Começa no meio
 
-  function updateCoverflow() {
-    items.forEach((item, i) => {
-      item.classList.remove("active");
-      const offset = i - activeIndex;
+function updateCarousel() {
+  images.forEach((img, index) => {
+    img.classList.remove('active', 'left', 'right');
 
-      if (offset === 0) {
-        // imagem principal
-        item.classList.add("active");
-        item.style.transform = "scale(1.1) translateX(0) rotateY(0deg)";
-        item.style.zIndex = 10;
-        item.style.opacity = 1;
-        item.style.filter = "brightness(1)";
-      } else {
-        // imagens laterais
-        const translateX = offset * 220;
-        const rotateY = offset < 0 ? 25 : -25; // inclinação 3D
-        item.style.transform = `scale(0.8) translateX(${translateX}px) rotateY(${rotateY}deg)`;
-        item.style.zIndex = 0;
-        item.style.opacity = 0.6;
-        item.style.filter = "brightness(0.6)";
-      }
-    });
-  }
-
-  // Clique para mudar
-  items.forEach((item, i) => {
-    item.addEventListener("click", () => {
-      activeIndex = i;
-      updateCoverflow();
-      resetAutoplay();
-    });
+    if (index === activeIndex) {
+      img.classList.add('active');
+    } else if (index === activeIndex - 1 || index === activeIndex + 1) {
+      img.classList.add(index < activeIndex ? 'left' : 'right');
+    }
   });
 
-  // Autoplay
-  function startAutoplay() {
-    autoplayInterval = setInterval(() => {
-      activeIndex = (activeIndex + 1) % items.length;
-      updateCoverflow();
-    }, 5000);
-  }
+  const offset = -activeIndex * (images[0].offsetWidth + 30); // 30 = gap
+  track.style.transform = `translateX(calc(50% + ${offset}px))`;
+}
 
-  function resetAutoplay() {
-    clearInterval(autoplayInterval);
-    startAutoplay();
-  }
+images.forEach((img, index) => {
+  img.addEventListener('click', () => {
+    activeIndex = index;
+    updateCarousel();
+  });
+});
 
-  // inicializar
-  updateCoverflow();
-  startAutoplay();
+updateCarousel();
 </script>
