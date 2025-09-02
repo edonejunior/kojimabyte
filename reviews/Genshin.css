@@ -83,44 +83,102 @@ nav a:hover {
   margin-top: 1rem;
 }
 
-/* ===== Coverflow Carousel ===== */
-.coverflow-carousel {
-  position: relative;
-  width: 100vw; /* agora ocupa toda a largura da tela */
-  margin-left: calc(-50vw + 50%); /* força o fundo a colar nos lados */
-  overflow: hidden;
-  padding: 2rem 0;
-  background: linear-gradient(to bottom, #111, #000); /* faixa preta */
+:root {
+  --blue: #3498DB;
+  --dark-bg: #1c1c1c;
 }
 
-.coverflow-track {
+.carousel-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 200px 0;
+}
+
+.carousel-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../assets/Games/Bannercarrosel.png");
+  background-size: cover;
+  background-position: center;
+  filter: blur(5px);
+  opacity: 0.8;
+  z-index: 0;
+}
+
+.carousel-container {
+  position: relative;
+  max-width: 90%;
+  margin: auto;
+  overflow: visible;
+  z-index: 1;
+}
+
+.carousel-track {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
-  transition: transform 0.5s ease;
-  perspective: 1000px; /* ativa 3D */
+  gap: 30px; /* Distância entre imagens */
+  transition: transform 0.8s ease-in-out;
 }
 
-.coverflow-item {
-  width: 200px;
-  border-radius: 12px;
+.carousel-track img {
+  height: 300px; /* 🔹 Todas imagens padronizadas pela altura */
+  width: auto;
+  object-fit: cover; /* garante corte proporcional sem deformar */
+  border-radius: 10px;
   cursor: pointer;
-  transition: all 0.5s ease;
+  transition: transform 0.8s ease, opacity 0.8s ease;
   opacity: 0.6;
-  filter: brightness(0.6);
-  transform: scale(0.8);
 }
 
-.coverflow-item.active {
-  width: 400px;
+.carousel-track img.active {
+  transform: scale(10.0); /* aumenta mais a imagem central */
   opacity: 1;
-  filter: brightness(1);
-  transform: scale(1.1) translateX(0) rotateY(0deg);
-  z-index: 5;
-  box-shadow: 0 6px 25px rgba(231, 76, 60, 0.6);
+  z-index: 8;
 }
 
-.coverflow-item:hover {
-  filter: brightness(0.9);
+.carousel-track img.left,
+.carousel-track img.right {
+  transform: scale(0.9);
+  opacity: 0.5;
+}
+
+/* Hover sutil nas imagens laterais */
+.carousel-track img:hover:not(.active) {
+  opacity: 0.8;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .carousel-track img {
+    width: 150px;
+  }
+}
+
+.carousel-track img.active {
+  transform: scale(1.3);
+  opacity: 1;
+  z-index: 2;
+}
+
+.carousel-track img.left,
+.carousel-track img.right {
+  transform: scale(0.9);
+  opacity: 0.8;
+}
+
+/* Hover sutil nas imagens laterais */
+.carousel-track img:hover:not(.active) {
+  opacity: 1;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .carousel-track img {
+    width: 120px;
+  }
 }
