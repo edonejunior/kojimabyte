@@ -1,0 +1,203 @@
+/* Tema escuro “FFXVI”: cristal (azul) + braze (laranja) */
+body.tema-escuro.ffxvi { background:#0b0e13; color:#e5e7eb; }
+body.tema-escuro.ffxvi header { background:#0f172a; }
+body.tema-escuro.ffxvi nav { background:#0b1220; }
+body.tema-escuro.ffxvi nav a:hover { color:#60a5fa; }
+
+/* Container e seções (segue padrão do site) */
+.container-max { width:92%; max-width:1200px; margin:0 auto; }
+.section { padding:2rem 0 1rem; }
+.section h2 { color:#93c5fd; margin:0 0 .75rem; }
+
+/* Ornamento sutil nos títulos (diamante/cristal) */
+.section h2::before{
+  content:"◆";
+  margin-right:.5rem;
+  color:#60a5fa;
+  opacity:.9;
+}
+
+/* HERO com “split” e brilho de cristal */
+.hero-ffxvi{
+  position:relative;
+  text-align:left;
+  padding:3rem 1rem 2rem;
+  background:
+    radial-gradient(800px 300px at 20% -10%, rgba(96,165,250,.12), transparent),
+    radial-gradient(900px 500px at 90% 10%, rgba(249,115,22,.08), transparent);
+}
+/* Título com fonte medieval */
+.hero-ffxvi .title{
+  font-family: 'Cinzel', serif;  /* antes era Press Start 2P */
+  font-weight: 700;
+  font-size: 2.25rem;
+  color:#c7d2fe;
+  margin:0 0 .5rem;
+  letter-spacing:.5px;
+  line-height: 1.15;
+}
+
+/* Emojis indicando o tom do jogo */
+.hero-ffxvi .tone-icons{
+  font-size: 1rem;         /* menor que o título pra ficar sutil */
+  vertical-align: middle;
+  margin-left: .5rem;
+  opacity: .9;
+  filter: drop-shadow(0 1px 0 rgba(0,0,0,.25));
+}
+
+/* (Opcional) efeito de “brilho” suave nos emojis ao passar o mouse */
+.hero-ffxvi .tone-icons:hover{
+  opacity: 1;
+  text-shadow: 0 0 6px rgba(96,165,250,.45);
+}
+
+.hero-ffxvi .subtitle{ max-width:800px; color:#cbd5e1; margin:.25rem 0 1rem; }
+.hero-ffxvi .meta{ display:flex; flex-wrap:wrap; gap:.5rem; align-items:center; }
+.hero-ffxvi .badge{
+  background:#0f172a; border:1px solid #1e293b; color:#e5e7eb;
+  padding:.35rem .6rem; border-radius:999px; font-size:.85rem;
+}
+.nota-badge{ border-color:#334155; color:#fca5a5; font-weight:800; }
+
+/* Linha de cristais no rodapé do hero */
+.hero-ffxvi::after{
+  content:"";
+  position:absolute; inset:auto 0 0 0; height:4px;
+  background:linear-gradient(90deg,#60a5fa,transparent,#f97316,transparent,#60a5fa);
+  opacity:.35;
+}
+
+/* Grid de intro: capa + painel Valisthea */
+.intro-grid{
+  display:grid; grid-template-columns:1.3fr .7fr; gap:24px; align-items:start; padding:1.5rem 0;
+}
+@media (max-width: 960px){ .intro-grid{ grid-template-columns:1fr; } }
+
+.cover picture, .cover img{ display:block; width:100%; height:auto; border-radius:16px; box-shadow:0 16px 40px rgba(0,0,0,.5); }
+@media (max-width: 960px){
+  .cover img{ aspect-ratio: 3 / 4; object-fit: cover; }
+}
+
+/* Ficha técnica estilizada */
+.ficha{
+  background:#0f172a; border:1px solid #1f2a44; border-radius:16px; padding:1rem 1.25rem;
+  position:relative; overflow:hidden;
+}
+.ficha::before{
+  content:""; position:absolute; top:-40px; right:-40px; width:160px; height:160px;
+  background:conic-gradient(from 0deg, rgba(96,165,250,.15), rgba(249,115,22,.15), rgba(96,165,250,.15));
+  filter:blur(20px);
+}
+.ficha h2{ margin:0 0 .5rem; }
+.ficha ul{ list-style:none; padding:0; margin:0; }
+.ficha li{ padding:.5rem 0; border-bottom:1px dashed #1f2a44; }
+.ficha li:last-child{ border-bottom:none; }
+
+/* Chips de Eikons */
+.eikons{
+  display:flex; flex-wrap:wrap; gap:.5rem; margin-top:.5rem;
+}
+.eikon-chip{
+  border:1px solid #1f2a44; background:#0b1220; padding:.25rem .5rem; border-radius:999px;
+  font-size:.85rem; color:#cbd5e1;
+}
+
+/* Active Time Lore */
+.atl{
+  border:1px solid #1f2a44;
+  background:linear-gradient(180deg,#0f172a,#0c1324);
+  border-radius:12px; padding:1rem 1.25rem; margin:.5rem 0 0;
+}
+.atl h3{ margin:.25rem 0 .5rem; color:#93c5fd; font-size:1rem; }
+
+/* Personagens */
+.personagens{
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:16px; list-style:none; padding:0; margin:0;
+}
+.personagens h3{ margin:0 0 .35rem; color:#e2e8f0; }
+.personagens p{ margin:0; color:#cbd5e1; }
+
+/* Seção destaque */
+.destaque{
+  background: linear-gradient(180deg, rgba(30,41,59,.5), rgba(2,6,23,.2));
+  border:1px solid #1f2a44; border-radius:12px; padding:1.25rem;
+}
+.motivos{ margin:.5rem 1rem; }
+.motivos li{ margin:.35rem 0; }
+
+/* Timeline de atos */
+.timeline{ display:grid; gap:12px; margin-top:.75rem; }
+.timeline .step{ display:grid; grid-template-columns: auto 1fr; gap:.75rem; align-items:start; }
+.timeline .dot{
+  width:10px; height:10px; border-radius:999px; background:#60a5fa; margin-top:.4rem;
+  box-shadow:0 0 10px rgba(96,165,250,.4);
+}
+.timeline .step h4{ margin:0; color:#e2e8f0; }
+.timeline .step p{ margin:.15rem 0 0; color:#cbd5e1; font-size:.95rem; }
+
+/* Caixa de combos/skills */
+.combo{
+  border:1px solid #1f2a44; border-radius:12px; background:#0f172a; padding:.9rem 1rem;
+}
+.combo h3{ margin:0 0 .5rem; color:#a5b4fc; font-size:1rem; }
+.combo .tag{
+  display:inline-block; border:1px solid #334155; border-radius:6px; padding:.15rem .4rem; margin:.15rem .25rem 0 0;
+  font-size:.85rem; color:#cbd5e1; background:#0b1220;
+}
+
+/* Grid de imagens */
+.grid-imagens{
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:12px;
+}
+.grid-imagens figure{
+  margin:0; background:#0f172a; border:1px solid #1f2a44; border-radius:10px; overflow:hidden;
+}
+.grid-imagens img{ width:100%; height:180px; object-fit:cover; display:block; }
+.grid-imagens figcaption{ padding:.5rem .75rem; color:#cbd5e1; font-size:.9rem; }
+
+/* Carrossel (reutiliza seu JS) */
+.carousel{ position:relative; margin-top:.5rem; }
+.carousel .track{
+  display:grid; grid-auto-flow:column; grid-auto-columns:100%; gap:8px;
+  overflow-x:auto; scroll-snap-type:x mandatory; scrollbar-width:none;
+}
+.carousel .track::-webkit-scrollbar{ display:none; }
+.slide{
+  scroll-snap-align:center; border-radius:12px; overflow:hidden; border:1px solid #1f2a44; background:#0f172a;
+}
+.slide img{ width:100%; height:420px; object-fit:cover; display:block; }
+@media (max-width: 640px){ .slide img{ height:300px; } }
+
+.carousel .nav{
+  position:absolute; top:50%; transform:translateY(-50%);
+  background:rgba(15,23,42,.85); color:#e5e7eb; border:1px solid #334155;
+  width:42px; height:42px; border-radius:999px; display:grid; place-items:center; cursor:pointer;
+}
+.carousel .prev{ left:8px; }
+.carousel .next{ right:8px; }
+.carousel .nav:hover{ background:rgba(30,41,59,.95); }
+
+.dots{ margin-top:.75rem; display:flex; gap:8px; justify-content:center; align-items:center; }
+.dots button{ width:10px; height:10px; border-radius:999px; border:none; cursor:pointer; background:#334155; }
+.dots button[aria-current="true"]{ background:#93c5fd; }
+
+/* Prós & Contras */
+.pros-contras .pc-grid{
+  display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:16px;
+}
+.pc-card{ border:1px solid #1f2a44; border-radius:12px; padding:1rem 1.25rem; background:#0f172a; }
+.pc-card h3{ margin:0 0 .75rem; }
+.pc-card ul{ margin:0; padding-left:1.1rem; }
+.pc-pros{ outline:2px solid rgba(96,165,250,.25); }
+.pc-cons{ outline:2px solid rgba(249,115,22,.25); }
+.pc-pros h3{ color:#93c5fd; }
+.pc-cons h3{ color:#fb923c; }
+
+/* Veredito */
+.veredito .nota-final span{
+  background:#1f2937; padding:.25rem .5rem; border-radius:6px; margin-right:.35rem;
+  color:#a5b4fc; font-weight:700;
+}
+
