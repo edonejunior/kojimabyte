@@ -71,6 +71,12 @@
   padding-bottom: 0.5rem;
 }
 
+.subnautica-page .card {
+  background-color: #fff;
+  color: var(--dark);
+}
+
+
 /* Pros e Contras */
 .pros-cons {
   display: flex;
