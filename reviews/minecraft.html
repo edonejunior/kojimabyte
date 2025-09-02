@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Minecraft Review</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="minecraft.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+</head>
+
+
+
+<body>
+
+  <header class="site-header">
+
+    <div class="container">
+      <a href="index.html"><img src="../assets/logo.png" alt="KOJIMABYTE" class="logo" /></a>
+    </div>
+   <h1 class="minecraft-title">Minecraft</h1>
+    <nav>
+      <a href="../index.html">Início</a>
+      <a href="../Review.html">Reviews</a>
+      <a href="../sobre.html">Sobre</a>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>🌍 Mundo Aberto e Infinito</h2>
+      <p>Minecraft oferece um universo gerado proceduralmente, onde cada mundo é único. A liberdade de explorar florestas, desertos, oceanos e cavernas profundas sem limites físicos é um convite à aventura constante.</p>
+    </section>
+
+    <section>
+      <h2>🛠️ Criatividade Sem Barreiras</h2>
+      <p>Com blocos como ferramentas, o jogador pode construir desde cabanas simples até cidades inteiras, recriar monumentos reais ou inventar estruturas surreais. É praticamente um Lego digital com possibilidades infinitas.</p>
+    </section>
+
+    <section>
+      <h2>👾 Comunidade e Mods</h2>
+      <p>A comunidade de Minecraft é uma das mais ativas do mundo dos games. Mods, mapas personalizados, servidores temáticos e skins criadas por fãs mantêm o jogo sempre fresco e adaptável a qualquer estilo de jogador.</p>
+    </section>
+
+    <section>
+      <h2>🎮 Jogabilidade Acessível e Profunda</h2>
+      <p>Simples de aprender, mas com camadas de complexidade. Seja no modo criativo, sobrevivência ou hardcore, Minecraft se adapta ao nível de desafio que você deseja, com mecânicas de crafting, combate e exploração bem equilibradas.</p>
+    </section>
+
+    <section>
+      <h2>🧠 Estímulo à Educação e Colaboração</h2>
+      <p>Minecraft é usado em escolas para ensinar lógica, programação, história e até matemática. Além disso, promove colaboração entre jogadores, resolução de problemas e pensamento estratégico.</p>
+    </section>
+
+    <section class="opinion">
+      <h2>📝 Opinião Final</h2>
+      <p>Minecraft é mais que um jogo — é uma plataforma de expressão e aprendizado. Sua versatilidade e impacto cultural o tornam um clássico moderno.</p>
+      <p><strong>Nota Final:</strong> ⭐ <span class="nota">9.5/10</span></p>
+    </section>
+
+    <section class="carousel">
+  <h2>🎠 Galeria Minecraft</h2>
+  <div class="carousel-wrapper">
+    <button class="carousel-btn prev">&#10094;</button>
+    <div class="carousel-track">
+      <img src="../assets/games/minecraft/img Construcao medieval.jpg" alt="Construção 1" />
+      <img src="../assets/games/minecraft/img Paisagem com montanhas.png" alt="Construção 2" />
+      <img src="../assets/games/minecraft/img Cidade futurista.webp" alt="Construção 3" />
+      <img src="../assets/games/minecraft/img Mobs em Destaque.jpg" alt="Construção 4" />
+    </div>
+    <button class="carousel-btn next">&#10095;</button>
+  </div>
+</section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Gustavo Reviews. Todos os direitos reservados.</p>
+  </footer>
+
+</body>
+
+<script>
+  const track = document.querySelector('.carousel-track');
+  const prevBtn = document.querySelector('.carousel-btn.prev');
+  const nextBtn = document.querySelector('.carousel-btn.next');
+  const images = document.querySelectorAll('.carousel-track img');
+  let index = 0;
+
+  function updateCarousel() {
+    const width = images[0].clientWidth;
+    track.style.transform = `translateX(-${index * width}px)`;
+  }
+
+  nextBtn.addEventListener('click', () => {
+    index = (index + 1) % images.length;
+    updateCarousel();
+  });
+
+  prevBtn.addEventListener('click', () => {
+    index = (index - 1 + images.length) % images.length;
+    updateCarousel();
+  });
+
+  window.addEventListener('resize', updateCarousel);
+</script>
+
+<script>
+  const title = document.querySelector('.minecraft-title');
+  title.addEventListener('mouseover', () => {
+    title.style.animation = 'bounce 0.3s infinite alternate';
+  });
+  title.addEventListener('mouseout', () => {
+    title.style.animation = 'bounce 1s infinite alternate';
+  });
+</script>
+
+</html>
