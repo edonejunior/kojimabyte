@@ -101,11 +101,11 @@ nav a:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("../assets/Games/Bannercarrosel.png"); /* Substitua por sua própria URL */
+  background-image: url("../assets/Games/Bannercarrosel.png");
   background-size: cover;
   background-position: center;
-  filter: blur(5px); /* Efeito de desfoque para suavizar a imagem */
-  opacity: 8.0; /* Reduz a opacidade para não distrair */
+  filter: blur(5px);
+  opacity: 0.8;
   z-index: 0;
 }
 
@@ -121,17 +121,42 @@ nav a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 30px; /* 🔹 Ajuste da distância entre imagens */
-  transition: transform 0.6s ease-in-out;
+  gap: 30px; /* Distância entre imagens */
+  transition: transform 0.8s ease-in-out;
 }
 
 .carousel-track img {
-  width: 180px;
-  height: auto;
+  height: 300px; /* 🔹 Todas imagens padronizadas pela altura */
+  width: auto;
+  object-fit: cover; /* garante corte proporcional sem deformar */
   border-radius: 10px;
   cursor: pointer;
-  transition: transform 0.5s ease, opacity 0.5s ease;
+  transition: transform 0.8s ease, opacity 0.8s ease;
   opacity: 0.6;
+}
+
+.carousel-track img.active {
+  transform: scale(10.0); /* aumenta mais a imagem central */
+  opacity: 1;
+  z-index: 8;
+}
+
+.carousel-track img.left,
+.carousel-track img.right {
+  transform: scale(0.9);
+  opacity: 0.5;
+}
+
+/* Hover sutil nas imagens laterais */
+.carousel-track img:hover:not(.active) {
+  opacity: 0.8;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .carousel-track img {
+    width: 150px;
+  }
 }
 
 .carousel-track img.active {
