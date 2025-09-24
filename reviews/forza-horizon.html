@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KojimaByte – Forza Horizon 5</title>
+
+  <!-- CSS global -->
+  <link rel="stylesheet" href="../css/style.css">
+
+  <!-- CSS específico desta página -->
+  <link rel="stylesheet" href="./forza-horizon.css">
+</head>
+<body>
+
+  <!-- Cabeçalho oficial do site -->
+  <header class="site-header">
+    <div class="logo">
+      <a href="index.html">KojimaByte</a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO exclusivo da página -->
+  <section class="fh5-hero forza-page">
+    <div class="hero-overlay">
+      <div class="hero-title-wrapper">
+        <img src="../assets/games/forza.avif" alt="Logo Forza Horizon 5" class="hero-logo">
+        <h1 class="forza-title">
+          Viva a<br>
+          <span>Velocidade</span>
+        </h1>
+      </div>
+      <p class="forza-subtitle">O festival automotivo definitivo no coração do México</p>
+    </div>
+  </section
+
+
+  <!-- ===== Conteúdo principal ===== -->
+  <main class="fh5-content container">
+    <article>
+      <h2>Review Completa</h2>
+      <p>
+        Forza Horizon 5 é uma celebração da cultura automotiva com um
+        mapa gigantesco inspirado no México. Sua jogabilidade fluida,
+        variedade de carros e eventos transformam cada corrida em um espetáculo.
+      </p>
+
+      <h3>Gráficos e Imersão</h3>
+      <p>
+        A qualidade visual é impressionante: desde desertos e selvas até
+        cidades coloridas, tudo em 4K com clima dinâmico.
+      </p>
+
+      <h3>Jogabilidade</h3>
+      <p>
+        O sistema de progressão é acessível tanto para novatos quanto para veteranos.
+        Corridas de rua, off-road e desafios criativos garantem diversão constante.
+      </p>
+
+      <blockquote class="fh5-quote">
+        “Forza Horizon 5 entrega uma das melhores experiências de mundo aberto da geração.”
+      </blockquote>
+    </article>
+
+    <aside class="fh5-info">
+      <h4>Ficha Técnica</h4>
+      <ul>
+        <li><strong>Plataformas:</strong> Xbox Series X|S, Xbox One, PC</li>
+        <li><strong>Desenvolvedora:</strong> Playground Games</li>
+        <li><strong>Lançamento:</strong> Novembro 2021</li>
+        <li><strong>Gênero:</strong> Corrida / Mundo aberto</li>
+      </ul>
+    </aside>
+  </main>
+
+  <!-- ===== Rodapé ===== -->
+  <footer class="site-footer">
+    <p>&copy; 2025 KojimaByte – Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+  const reveals = document.querySelectorAll('.reveal');
+  window.addEventListener('scroll', () => {
+    reveals.forEach(el => {
+      const windowHeight = window.innerHeight;
+      const elementTop = el.getBoundingClientRect().top;
+      if (elementTop < windowHeight - 100) el.classList.add('active');
+    });
+  });
+</script>
+
+</body>
+</html>

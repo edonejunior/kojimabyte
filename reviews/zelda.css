@@ -1,0 +1,73 @@
+/* ===== Hero ===== */
+.hero {
+  background: url('../img/zelda-hero.jpg') center/cover no-repeat;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.hero-content {
+  position: relative;
+  max-width: 700px;
+  padding: 0 1rem;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-family: 'Cinzel', serif; /* fonte aventureira */
+  text-shadow: 0 0 10px #000;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+}
+
+/* ===== Review ===== */
+.review {
+  background: #f6f8f2;
+  padding: 3rem 1.5rem;
+  max-width: 900px;
+  margin: auto;
+  line-height: 1.8;
+}
+
+.review h2 {
+  color: #1b4d3e;
+  border-left: 4px solid #a5c93f;
+  padding-left: 0.5rem;
+  margin-top: 2rem;
+  font-family: 'Cinzel', serif;
+}
+
+.review p {
+  color: #333;
+}
+
+.score {
+  text-align: right;
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  font-weight: bold;
+  color: #a05c0f;
+}
+
+/* Ajustes no rodapé */
+footer {
+  background: #1b4d3e;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
